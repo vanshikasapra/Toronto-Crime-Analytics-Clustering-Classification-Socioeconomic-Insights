@@ -10,33 +10,30 @@ Crime prevention strategies are often reactive and rely on aggregate metrics tha
 **Data Sources**
 
 Toronto Major Crime Indicators (MCI): Event-level data covering Assault, Auto Theft, Break and Enter, Robbery, and Theft Over.
+
 Toronto Neighborhood Census (2021): Demographic and socioeconomic variables including population, age, income inequality (Gini), unemployment, low-income prevalence (LIM-AT), education levels, and housing indicators.
 
 **Feature Engineering**
 
 Key transformations included:
-Converting raw crime counts into crime mix proportions by neighborhood
-Normalizing socioeconomic variables using z-score standardization
-Merging crime and census data at the neighborhood level
-Creating risk indicators and temporal groupings (day vs night, violent vs non-violent)
+Converting raw crime counts into crime mix proportions by neighborhood, Normalizing socioeconomic variables using z-score standardization, Merging crime and census data at the neighborhood level, Creating risk indicators and temporal groupings (day vs night, violent vs non-violent)
 
 **Modeling Approach**
 
-The analysis combines multiple analytical techniques:
 Clustering
-K-Means clustering used to segment neighborhoods by:
-  Crime composition (4 crime clusters)
-  Socioeconomic characteristics (4 socioeconomic clusters)
-Cluster validation performed using elbow method and silhouette scores
-PCA (2D and 3D) used for dimensionality reduction and visual validation
-Cluster centroids summarized using z-score heatmaps
+  K-Means clustering used to segment neighborhoods by:
+    Crime composition (4 crime clusters)
+    Socioeconomic characteristics (4 socioeconomic clusters)
+  Cluster validation performed using elbow method and silhouette scores
+  PCA (2D and 3D) used for dimensionality reduction and visual validation
+  Cluster centroids summarized using z-score heatmaps
 
 Classification
-Logistic Regression, Random Forest, and Gradient Boosting models applied to:
-  Predict day vs night crime occurrence
-  Predict violent vs non-violent crime
-Models evaluated using accuracy and AUC
-Feature importance used to identify consistent risk drivers
+  Logistic Regression, Random Forest, and Gradient Boosting models applied to:
+    Predict day vs night crime occurrence
+    Predict violent vs non-violent crime
+  Models evaluated using accuracy and AUC
+  Feature importance used to identify consistent risk drivers
 
 **Key Insights**
 
@@ -47,14 +44,8 @@ Crime patterns vary significantly by time of day and season, supporting targeted
 
 **Tools & Technologies**
 
-Python (pandas, numpy, scikit-learn, seaborn, matplotlib)
-Unsupervised learning (K-Means, PCA)
-Supervised learning (Logistic Regression, Random Forest, GBM)
-Data visualization & exploratory analysis
+Python (pandas, numpy, scikit-learn, seaborn, matplotlib), Unsupervised learning (K-Means, PCA), Supervised learning (Logistic Regression, Random Forest, GBM), Data visualization & exploratory analysis
 
 **Potential Application**
 
-Data driven patrol planning 
-Targeted community intervention programs 
-Urban planning and public safety analytics
-Segmentation frameworks applicable to product, risk, or user analytics 
+Data driven patrol planning, Targeted community intervention programs, Urban planning and public safety analytics, Segmentation frameworks applicable to product, risk, or user analytics 
